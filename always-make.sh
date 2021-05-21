@@ -13,4 +13,4 @@ export -f make
 
 alias g14="g++ -std=c++14"
 
-
+alias gcpp="g++ -std=c++14"
