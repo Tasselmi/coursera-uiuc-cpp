@@ -87,6 +87,25 @@ void LinkedList<T>::insertOrdered(const T& newData) {
   // Please implement this function according to the description
   // above and in the instructions PDF.
 
+  Node* oneDataNode = new Node(newData);
+  if (this->empty())
+  {
+    this->head_ = oneDataNode;
+    this->tail_ = oneDataNode;
+  } else {
+    Node* cur = head_;
+    while (cur != nullptr && newData > cur->data)
+    {
+      cur = cur->next
+    }
+    if (cur == nullptr) {
+
+    } else {
+      
+    }
+  }
+  
+
   // Hints:
   // Make your new node on the heap and then find where it needs to
   // go in the list. A good way to do this is by considering special

@@ -143,7 +143,9 @@ public:
   // function, the list is treated as const, and this version of front() must
   // exist or front() cannot be called on the object.
   // Please also see the note below in this file about "const correctness".
-  const T& front() const { //第一const表示返回值不能被修改，第二个const表示此方法不能修改object的状态，只能读取object的状态
+  
+  //第一const表示返回值不能被修改，第二个const表示此方法不能修改object的状态，只能读取object的状态
+  const T& front() const { 
     if (!head_) {
       throw std::runtime_error("front() called on empty LinkedList");
     }
