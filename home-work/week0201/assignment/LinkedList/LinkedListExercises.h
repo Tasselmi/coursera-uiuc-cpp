@@ -88,23 +88,42 @@ void LinkedList<T>::insertOrdered(const T& newData) {
   // above and in the instructions PDF.
 
   Node* oneDataNode = new Node(newData);
-  if (this->empty())
+
+  if (this->empty()) // just insert
   {
     this->head_ = oneDataNode;
     this->tail_ = oneDataNode;
+    oneDataNode->prev = nullptr;
+    oneDataNode->next = nullptr;
   } else {
-    Node* cur = head_;
+    Node* cur = this->head_;
     while (cur != nullptr && newData > cur->data)
     {
-      cur = cur->next
+      cur = cur->next;  //get a position to insert data
     }
-    if (cur == nullptr) {
-
-    } else {
-      
+    if (cur == nullptr) { //insert at tail
+      this->tail_->next = oneDataNode;
+      oneDataNode->prev = this->tail_;
+      oneDataNode->next = nullptr;
+      this->tail_ = oneDataNode;
+    } else { 
+      Node* leftSide = cur->prev;
+      if (leftSide == nullptr) //insert at head
+      {
+        this->head_ = oneDataNode;
+        oneDataNode->prev = nullptr;
+        oneDataNode->next = cur;
+        cur->prev = oneDataNode;
+      } else {  // insert in middle
+        leftSide->next = oneDataNode;
+        oneDataNode->prev = leftSide;
+        oneDataNode->next = cur;
+        cur->prev = oneDataNode;
+      }
     }
   }
   
+  this->size_++;
 
   // Hints:
   // Make your new node on the heap and then find where it needs to
@@ -247,6 +266,39 @@ LinkedList<T> LinkedList<T>::merge(const LinkedList<T>& other) const {
   // -----------------------------------------------------------
   // Please implement this function according to the description
   // above and in the instructions PDF.
+
+  if (left.empty())
+  {
+    merged = right;
+  } else if (right.empty())
+  { 
+    merged = left;
+  } else {
+    Node* iterLeft = left.head_;
+    Node* iterRight = right.head_;
+
+    while (iterLeft != nullptr) //iterate over left side
+    {
+      if (iterRight != nullptr && iterLeft->data >= iterRight->data)
+      {
+        merged.pushBack(iterRight->data);
+        iterRight = iterRight->next;
+      } else {
+        merged.pushBack(iterLeft->data);
+        iterLeft = iterLeft->next;
+      }
+    }
+
+    while (iterRight != nullptr) //iterate over right side that missed
+    {
+      merged.pushBack(iterRight->data);
+      iterRight = iterRight->next;
+    }
+  }
+
+  merged.size_ = left.size_ + right.size_;
+  
+  std::cout << "merged: " << left << " +++ " << right << std::endl;
 
   // Hints:
   // 1. Assuming that the left and right lists are already sorted, remember

@@ -7,8 +7,10 @@
             "args": [
                 "-g",
                 "${file}",
+                // "${fileDirname}/*.cpp",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}",
+                // "${fileDirname}/${fileBasenameNoExtension}",
+                "${fileDirname}/${fileBasenameNoExtension}.o",
                 "--std=c++17",
                 "-I",
                 "${workspaceFolder}/contrib/boost_1.73_install/include"
