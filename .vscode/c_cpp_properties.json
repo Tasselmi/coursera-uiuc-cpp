@@ -19,8 +19,10 @@
             "defines": [],
             "macFrameworkPath": [
                 "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks"
+                // "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/Library/Frameworks"
             ],
             "compilerPath": "/usr/local/opt/llvm/bin/clang",
+            // "compilerPath": "/usr/local/bin/g++-10",
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "macos-clang-x64"

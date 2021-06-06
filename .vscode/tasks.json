@@ -4,6 +4,7 @@
             "type": "cppbuild",
             "label": "C/C++: clang++ 生成活动文件",
             "command": "/usr/local/opt/llvm/bin/clang++",
+            // "command": "/usr/local/bin/g++-10",
             "args": [
                 "-g",
                 "${file}",
@@ -13,7 +14,13 @@
                 "${fileDirname}/${fileBasenameNoExtension}",
                 "--std=c++17",
                 "-I",
-                "${workspaceFolder}/contrib/boost_1.73_install/include"
+                "${workspaceFolder}/contrib/boost_1.73_install/include",
+                "-L",
+                "${workspaceFolder}/contrib/boost_1.73_install/lib",
+                "-lboost_thread",
+                "-lboost_chrono",
+                "-lpthread",
+                "-v"
             ],
             "options": {
                 "cwd": "${fileDirname}"
