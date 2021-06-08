@@ -1,3 +1,5 @@
+// cd ./contrib/boost_1_73_0
+// ./bootstrap.sh /usr/local/opt/llvm/bin/clang++  && ./b2 install
 {
     "tasks": [
         {
@@ -12,6 +14,7 @@
                 "-o",
                 // "${fileDirname}/${fileBasenameNoExtension}",
                 "${fileDirname}/${fileBasenameNoExtension}",
+                "-stdlib=libc++",
                 "--std=c++17",
                 "-I",
                 "${workspaceFolder}/contrib/boost_1.73_install/include",
@@ -19,6 +22,7 @@
                 "${workspaceFolder}/contrib/boost_1.73_install/lib",
                 "-lboost_thread",
                 "-lboost_chrono",
+                "-lboost_atomic",
                 "-lpthread",
                 "-v"
             ],

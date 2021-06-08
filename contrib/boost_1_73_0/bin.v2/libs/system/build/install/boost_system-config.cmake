@@ -13,10 +13,10 @@ endif()
 get_filename_component(_BOOST_CMAKEDIR "${CMAKE_CURRENT_LIST_DIR}/../" REALPATH)
 
 # If the computed and the original directories are symlink-equivalent, use original
-if(EXISTS "/Users/liang/Documents/learn-cpp/boost_1.73_install/lib/cmake")
-  get_filename_component(_BOOST_CMAKEDIR_ORIGINAL "/Users/liang/Documents/learn-cpp/boost_1.73_install/lib/cmake" REALPATH)
+if(EXISTS "/usr/local/lib/cmake")
+  get_filename_component(_BOOST_CMAKEDIR_ORIGINAL "/usr/local/lib/cmake" REALPATH)
   if(_BOOST_CMAKEDIR STREQUAL _BOOST_CMAKEDIR_ORIGINAL)
-    set(_BOOST_CMAKEDIR "/Users/liang/Documents/learn-cpp/boost_1.73_install/lib/cmake")
+    set(_BOOST_CMAKEDIR "/usr/local/lib/cmake")
   endif()
   unset(_BOOST_CMAKEDIR_ORIGINAL)
 endif()
