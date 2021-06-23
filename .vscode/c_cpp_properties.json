@@ -15,7 +15,7 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/contrib/boost_1.73_install/include", //here specify your boost install dir
-                "${workspaceFolder}/contrib/boost_1.73_install/lib"
+                "${workspaceFolder}/contrib/boost_1.73_install/lib" //没作用，需要先把boost的library安装到机器的默认目录 /usr/local/lib 下面
             ],
             "defines": [],
             "macFrameworkPath": [
