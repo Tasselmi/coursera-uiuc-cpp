@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <memory>
 
 class Father
 {
@@ -26,9 +28,25 @@ public:
     }
 };
 
+class Person
+{
+private:
+    std::string _name;
+    unsigned int _age;
+
+public:
+    Person(std::string name, unsigned int age) : _name(name), _age(age) { }
+
+};
+
+
 int main() {
     Son son;
     son.run();
+
+    auto persons = std::shared_ptr<std::vector<Person>>();
+    
+
 
     return 0;
 }
