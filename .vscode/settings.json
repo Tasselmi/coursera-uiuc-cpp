@@ -74,6 +74,15 @@
         "numeric": "cpp",
         "random": "cpp",
         "thread": "cpp",
-        "variant": "cpp"
-    }
+        "variant": "cpp",
+        "*.ipp": "cpp",
+        "csetjmp": "cpp",
+        "csignal": "cpp",
+        "codecvt": "cpp",
+        "condition_variable": "cpp",
+        "coroutine": "cpp",
+        "list": "cpp",
+        "typeindex": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
