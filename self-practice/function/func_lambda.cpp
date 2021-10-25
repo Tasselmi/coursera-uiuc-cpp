@@ -5,6 +5,7 @@
 #include <ctime>
 
 
+///lambda函数表达式
 int main() {
     std::vector<int> numbers(5000);
     std::srand(std::time(0));
