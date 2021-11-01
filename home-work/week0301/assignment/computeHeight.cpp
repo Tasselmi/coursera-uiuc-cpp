@@ -42,12 +42,14 @@ public:
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 
 class Node {
 public:
   int height; // to be set by computeHeight()
   Node *left, *right;
+
   Node() { height = -1; left = right = nullptr; }
   ~Node() {
     delete left;
@@ -57,10 +59,23 @@ public:
   }
 };
 
+//递归计算二叉树的高度（包含每个子树）
+int maxHeight(Node *n) {
+  if (n == nullptr) {
+    return 0;
+  }
+  
+  int lh = maxHeight(n->left);
+  int rh = maxHeight(n->right);
+  int d = std::max(lh, rh) + 1; //d是把nullptr也算进去了的高度，所以需要减去1
+  n->height = d - 1;
+  return d;
+}
+
 void computeHeight(Node *n) {
-
   // Implement computeHeight() here.
-
+  int v = maxHeight(n);
+  return;
 }
 
 // This function prints the tree in a nested linear format.
@@ -94,7 +109,7 @@ int main() {
 
   printTree(n);
   std::cout << std::endl << std::endl;
-  printTreeVertical(n);
+  // printTreeVertical(n);
   
   // The Node destructor will recursively
   // delete its children nodes.
