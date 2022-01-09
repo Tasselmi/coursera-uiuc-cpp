@@ -2,6 +2,7 @@
 #include <valarray>
 #include <vector>
 
+
 inline int binarySearch(std::valarray<int> arr, int target)
 {
     int start = 0;

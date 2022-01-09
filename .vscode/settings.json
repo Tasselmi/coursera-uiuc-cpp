@@ -95,7 +95,9 @@
         "span": "cpp",
         "strstream": "cpp",
         "unordered_set": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "*.tcc": "cpp",
+        "rope": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
